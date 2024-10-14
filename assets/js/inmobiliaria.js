@@ -32,36 +32,36 @@ const propiedadesEnVenta = [{
         pets: true,
     },
     {
-        nombre: "Apartamento de lujo en zona exclusiva",
+        nombre: "Amplia y luminosa casa",
         src: "/assets/img/miami.jpg",
-        descripcion: "Este apartamento de lujo está ubicado en una exclusiva zona residencial",
-        ubicacion:"123 Luxury Lane, Prestige Suburb, CA 45678",
+        descripcion: "Amplia cocina completamente equipada, espacioso patio descubierto",
+        ubicacion:"W 3rd St e/Pres. Barak Obama y Avenue G, Miami",
         habitaciones: 4,
-        baños: 4,
-        costo: "5.000",
+        baños: 2,
+        costo: "325.000",
         smoke: false,
         pets: false,
     },
     {
-        nombre:"Apartamento acogedor en la montaña",
+        nombre:"Amplia casa, perfecta para vivir o rentar",
         src: "/assets/img/Oas_Karlow.jpg",
-        descripcion: "Este apartamento acogedor está situado en lo alto de una montaña con impresionantes vistas",
+        descripcion: "Área de rápido crecimiento, cercana a escuelas, centros comerciales y culturales",
         ubicacion:"Oas. Karlow Ave S, Lehigh Acres, Tampa",
-        habitaciones: 2,
-        baños: 1,
-        costo: "1.200",
+        habitaciones: 5,
+        baños: 3,
+        costo: "355.000",
         smoke: true,
         pets: true,
     },
     {
-        nombre:"Penthouse de lujo con terraza panorámica",
+        nombre:"Hermosa propiedad con amplia piscina",
         src: "/assets/img/orlando.jpg",
-        descripcion: "Este penthouse de lujo ofrece una terraza panorámica con vistas espectaculares",
-        ubicacion:"567 Skyline Avenue, Skyview City, CA 56789",
-        habitaciones: 3,
+        descripcion: "Rnovada propiedad cercana a tiendas principales y parques temáticos",
+        ubicacion:"Orlando, Florida",
+        habitaciones: 4,
         baños: 3,
-        costo: "4.500",
-        smoke: false,
+        costo: "360.000",
+        smoke: true,
         pets: true,
 }];
 
@@ -99,37 +99,37 @@ const propiedadesEnAlquiler = [{
         pets: false,
     },
     {
-        nombre: "Apartamento en el centro de la ciudad",
-        src: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXBhcnRtZW50fGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=700&q=60",
-        descripcion: "Este apartamento de 2 habitaciones está ubicado en el corazón de la ciudad, cerca de todo.",
-        ubicacion: "123 Main Street, Anytown, CA 91234",
-        habitaciones: 2,
+        nombre: "Reconstruida en 2021, cerca del mar",
+        src: "/assets/img/alquiler_saltspray.jpg",
+        descripcion: "Preciosa casa completamente reconstruída en el año 2021, hermosas playas.",
+        ubicacion: "Port St. Joe, FL 32456",
+        habitaciones: 4,
         baños: 2,
-        costo: "2.000",
+        costo: "3.500",
         smoke: false,
-        pets: true,
+        pets: false,
     },
     {
-        nombre:"Apartamento luminoso con vista al mar",
-        src: "https://images.unsplash.com/photo-1669071192880-0a94316e6e09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-        descripcion: "Este hermoso apartamento ofrece una vista impresionante al mar",
+        nombre:"Cabañas Tradicionales",
+        src: "/assets/img/alquiler_florida.jpg",
+        descripcion: "Cuatro hermosas cabañas disponibles con un mes de descuento por año corrido",
         ubicacion:"456 Ocean Avenue, Seaside Town, CA 56789",
         habitaciones: 3,
         baños: 3,
-        costo: "2.500",
-        smoke: true,
+        costo: "3.000",
+        smoke: false,
         pets: true,
     },
     {
-        nombre:"Condominio moderno en zona residencial",
-        src: "https://images.unsplash.com/photo-1567496898669-ee935f5f647a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNvbmRvfGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1000&q=60.jpg",
-        descripcion: "Este elegante condominio moderno está ubicado en una tranquila zona residencial",
-        ubicacion:"123 Main Street, Anytown, CA 91234",
-        habitaciones: 2,
+        nombre:"Completamente renovada, espaciosa y confortable",
+        src: "/assets/img/alquiler_kirkwood.jpg",
+        descripcion: "Este recienteente renovado hogar lo inspirará para sentirlo como propio",
+        ubicacion:"North Port, FL 34288",
+        habitaciones: 3,
         baños: 2,
-        costo: "2.200",
-        smoke: false,
-        pets: false,
+        costo: "1.900",
+        smoke: true,
+        pets: true,
 }];
 
 function tarjetaPropiedad(prop) {
@@ -181,14 +181,18 @@ for (let propi of propiedadesEnAlquiler) {
     enAlquilerTotal_html += tarjetaPropiedad(propi); 
 };
 
-let divPropiedadesEnVenta = document.getElementById("propiedades-en-venta");
-divPropiedadesEnVenta.innerHTML = enVentaDestacada_html;
+let divPropiedadesEnVenta = document.querySelector("#propiedades-en-venta");
+if (divPropiedadesEnVenta != null){
+divPropiedadesEnVenta.insertAdjacentHTML("afterbegin", enVentaDestacada_html);};
 
-let divPropiedadesEnAlquiler = document.getElementById("propiedades-en-alquiler");
-divPropiedadesEnAlquiler.innerHTML = enAlquilerDestacada_html;
+let divPropiedadesEnAlquiler = document.querySelector("#propiedades-en-alquiler");
+if (divPropiedadesEnAlquiler != null) {
+divPropiedadesEnAlquiler.insertAdjacentHTML("afterbegin", enAlquilerDestacada_html);};
 
-let divPropiedadesEnVentaTodas = document.getElementById("propiedades-en-venta-todas");
-divPropiedadesEnVentaTodas.innerHTML = enVentaTotal_html;
+let divPropiedadesEnVentaTodas = document.querySelector("#propiedades-en-venta-todas");
+if (divPropiedadesEnVentaTodas != null) {
+divPropiedadesEnVentaTodas.insertAdjacentHTML("afterbegin", enVentaTotal_html);};
 
-let divPropiedadesEnAlquilerTodas = document.getElementById("propiedades-en-alquiler-todas");
-divPropiedadesEnAlquilerTodas.innerHTML = enAlquilerTotal_html;
+let divPropiedadesEnAlquilerTodas = document.querySelector("#propiedades-en-alquiler-todas");
+if (divPropiedadesEnAlquilerTodas != null) {
+divPropiedadesEnAlquilerTodas.insertAdjacentHTML("afterbegin", enAlquilerTotal_html);};
